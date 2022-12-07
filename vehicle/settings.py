@@ -83,10 +83,12 @@ WSGI_APPLICATION = 'vehicle.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'vsm2',
-        'USER': 'derrick',
-        'PASSWORD': 'daniel',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'rRzKTqg9YDpHdawZH8qX',
+        'HOST': 'containers-us-west-61.railway.app',
+        'PORT': '5462',
     }
 }
 
