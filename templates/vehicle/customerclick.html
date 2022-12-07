@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static "animate.css" %}">
+
+    <style media="screen">
+      /* ================================================================================= */
+      /* SCROLLBAR */
+      /* ================================================================================= */
+      ::-webkit-scrollbar {
+        width: 15px;
+      }
+
+      /* Track */
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+
+      ::-webkit-scrollbar-thumb {
+        background: #00c6ff; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .jumbotron {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background-image: url('{% static "images/timeline.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+      }
+
+      .jumbotron h1 {
+        text-align: center;
+      }
+
+      ._button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background: #00c6ff; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        text-align: center;
+        cursor: pointer;
+        /* width: 100%; */
+        font-size: 18px;
+        border-radius: 50px !important;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include "vehicle/navbar.html" %}
+    <br /><br />
+    <div class="jumbotron" style="margin-bottom: 0px; height: 90vh">
+      <p class="lead fade-in-text">
+        Welcome to
+        <span style="color: #0072ff; font-weight: bold"
+          >Vehicle Service Management</span
+        >
+      </p>
+
+      <p class="fade-in-text">
+        You can access various features as a
+        <span style="color: #0072ff">client</span> after Login.
+      </p>
+      <p class="fade-in-text">Please Sign-up if you don't have an account.</p>
+      <p class="fade-in-text">Login if you have an account.</p>
+      <p class="lead">
+        <a class="_button" href="customersignup" role="button"
+          >Create Your Account</a
+        >
+        <span style="margin-right: 20px"></span>
+        <a class="_button" href="customerlogin" role="button">Login</a>
+      </p>
+    </div>
+    <div
+      class="text-center"
+      style="background-color: #0072ff; color: #fff; box-shadow: 5px 0 5px #000"
+    >
+      Copyright &copy; 2022 Vehicle Service Management
+    </div>
+  </body>
+</html>

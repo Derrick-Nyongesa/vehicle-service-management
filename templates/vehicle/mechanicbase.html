@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+      .bs-example {
+        margin: 0px;
+      }
+      .bg-dark {
+        /* background-color: #fff !important; */
+        box-shadow: 5px 0 5px #000 !important;
+      }
+      .navbar-brand {
+        font-size: 20px;
+        font-family: sans-serif;
+      }
+
+      .nav-link {
+        color: #0072ff !important;
+        font-size: 16.5px;
+      }
+      .nav-link:hover {
+        color: #fff !important;
+      }
+
+      button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background: #00c6ff; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        text-align: center;
+        cursor: pointer;
+        /* width: 100%; */
+        font-size: 18px;
+        /* border-radius: 50px !important; */
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="bs-example">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand"
+          ><img src="{% static "images/logo.png" %}" alt=""></a
+        >
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarCollapse"
+        >
+          <div class="navbar-nav">
+            <a
+              href="/mechanic-dashboard"
+              class="nav-item nav-link active"
+              style="color: #fff !important"
+              ><i
+                class="fa fa-home _home"
+                aria-hidden="true"
+                style="font-size: 25px !important; margin-right: 1px !important"
+              ></i
+              >HOME</a
+            >
+          </div>
+          <div class="">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a href="/mechanic-profile" class="nav-item nav-link"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/mechanic-work-assigned" class="nav-item nav-link"
+                  >Work Assigned</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/mechanic-salary" class="nav-item nav-link"
+                  >Work Done</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/mechanic-attendance" class="nav-item nav-link"
+                  >Attendance</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/mechanic-feedback" class="nav-item nav-link"
+                  >Feedback</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href="/logout"
+                  class="nav-item nav-link logout"
+                  style="margin-left: 10px; color: red !important"
+                  ><i
+                    class="fa fa-sign-out"
+                    aria-hidden="true"
+                    style="font-size: 20px !important"
+                  ></i>
+                  Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

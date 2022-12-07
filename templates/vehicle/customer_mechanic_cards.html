@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static "animate.css" %}">
+    <style>
+      .card {
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+      }
+
+      .title {
+        color: grey;
+        font-size: 18px;
+      }
+
+      button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background: #00c6ff; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        text-align: center;
+        cursor: pointer;
+        /* width: 100%; */
+        font-size: 18px;
+        border-radius: 50px;
+      }
+
+      /* button:hover,
+      a:hover {
+        opacity: 0.7;
+      } */
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 60px;
+        margin-left: 150px;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+
+      a {
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row" style="color: #fff">
+        <div class="col-md-3 col-sm-12"></div>
+        <div class="col-md-6 col-sm-12">
+          <p>
+            Owners of vehicles can avoid unforeseen car problems by maintaining
+            their vehicles regularly. Early detection of vehicle concerns is
+            crucial to preventing them from developing into serious
+            difficulties. Owners of vehicles frequently inquire about service at
+            auto shops. Vehicle technicians examine crucial parts of the vehicle
+            and fix problems to make sure they are in good condition and won't
+            break down suddenly.
+          </p>
+          <p>
+            Customer records are still entered manually, as are transactions
+            with clients, tracking of vehicle repairs as they are made, updates
+            on vehicle services, and billing. The functioning of the garage and
+            the response time to client inquiries will be slowed by the ongoing
+            usage of manual procedures.
+          </p>
+          <p>
+            Customers and car garages will both profit from the system's
+            installation. Utilizing the technology to run the company will help
+            car garages expand and improve operational efficiency. Customers may
+            do business for car service easily and comfortably.
+          </p>
+          <hr className="my-4" />
+          <p>Explore our Website.</p>
+        </div>
+        <div class="col-md-3 col-sm-12"></div>
+      </div>
+    </div>
+  </body>
+</html>

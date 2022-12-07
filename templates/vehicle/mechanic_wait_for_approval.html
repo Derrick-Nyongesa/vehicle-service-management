@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static "fontawesome-free/css/all.min.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "animate.css" %}">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style media="screen">
+    /* ================================================================================= */
+    /* SCROLLBAR */
+    /* ================================================================================= */
+    ::-webkit-scrollbar {
+      width: 15px;
+    }
+
+    /* Track */
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+
+    ::-webkit-scrollbar-thumb {
+      background: #00c6ff; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #0072ff,
+        #00c6ff
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #0072ff,
+        #00c6ff
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    ._body {
+      background-image: url('{% static "images/timeline.jpg" %}');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  text-align: center;
+  cursor: pointer;
+  /* width: 100%; */
+  font-size: 18px;
+  border-radius: 50px !important;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover,
+a:hover {
+  opacity: 0.7;
+}
+
+a:hover{
+  color: #fff !important;
+  text-decoration: none !important;
+}
+    
+
+  .card{
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    background-color: transparent !important;
+    border: #0072ff solid 2px !important;
+    border-radius: 50px !important;
+  }
+
+  hr.my-4 {
+  border: 1px solid #0072ff;
+}
+  </style>
+  
+</head>
+<body>
+  {% include "vehicle/navbar.html" %}
+  <div class="_body" style="height: 150vh; width: 100vw;">
+    <div style="padding-top: 120px;">
+      <div class="text-center" style="color: #fff;">
+      
+        <div class="row">
+          <div class="col-md-3 col-sm-12"></div>
+          <div class="col-md-6 col-sm-12">
+            <div class="card">
+              <div>
+                <h1 class="display-4 fade-in-text">Hello <span style="color: #0072ff;">{{request.user.first_name}}</span></h1>
+          <p class="lead fade-in-text">Your Account is not approved till now <br><br>Our Team is checking your profile <br><br> Soon you will be hired to our Agency</p>
+         
+          <div class="container">
+            <hr class="my-4">
+          </div>
+          <p class="fade-in-text">Check Later</p>
+          <p class="lead">
+            <a class="button" href="/logout" role="button">Logout For Now</a>
+          </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-12"></div>
+        </div>
+      </div>
+    </div>
+    
+    
+  
+</body>
+</html>

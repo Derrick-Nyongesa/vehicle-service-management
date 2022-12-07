@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static "animate.css" %}">
+    <style media="screen">
+      /* ================================================================================= */
+      /* SCROLLBAR */
+      /* ================================================================================= */
+      ::-webkit-scrollbar {
+        width: 15px;
+      }
+
+      /* Track */
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+
+      ::-webkit-scrollbar-thumb {
+        background: #00c6ff; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      ._body {
+        background-image: url('{% static "images/timeline.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      thead {
+        background: #0072ff !important;
+      }
+      ._delete {
+        color: red;
+        font-size: 20px !important;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "vehicle/customerbase.html" %}
+    <div class="_body" style="height: 100vh">
+      <div style="margin-top: 70px">
+        <p class="text-center animated bounceInUp">
+          <img src="{% static "images/approved-request.png" %}" alt="Approved
+          Requests">
+        </p>
+      </div>
+      <div s>
+        <div class="container-fluid">
+          <div class="table-responsive">
+            <table class="table" style="color: #fff">
+              <thead>
+                <tr class="text-center">
+                  <th scope="col">Vehicle Name</th>
+                  <th scope="col">Vehicle Number</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Problem Description</th>
+                  <th scope="col">Enquiry Date</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for enq in enquiries %}
+                <tr class="text-center fade-in-text">
+                  <th scope="row">{{enq.vehicle_name}}</th>
+                  <td>{{enq.vehicle_no}}</td>
+                  <td>{{enq.category}}</td>
+                  <td>{{enq.problem_description}}</td>
+                  <td>{{enq.date}}</td>
+                  <td>{{enq.status}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-center"
+      style="background-color: #0072ff; color: #fff; box-shadow: 5px 0 5px #000"
+    >
+      Copyright &copy; 2022 Vehicle Service Management
+    </div>
+  </body>
+</html>

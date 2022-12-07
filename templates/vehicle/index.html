@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="{% static "animate.css" %}">
+    <style media="screen">
+      /* ================================================================================= */
+      /* SCROLLBAR */
+      /* ================================================================================= */
+      ::-webkit-scrollbar {
+        width: 15px;
+      }
+
+      /* Track */
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+
+      ::-webkit-scrollbar-thumb {
+        background: #00c6ff; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .jumbotron {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background-image: url('{% static "images/bg.jpg" %}');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .jumbotron h1 {
+        text-align: center;
+      }
+      ._body {
+        background-image: url('{% static "images/timeline.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include "vehicle/navbar.html" %}
+    <br /><br />
+
+    <div class="_body">
+      <div
+        class="jumbotron"
+        style="margin-bottom: 0px; margin-top: 0px; height: 100vh"
+      >
+        <div
+          style="
+            align-items: center;
+            padding: 70px 0;
+            color: #0072ff;
+            backdrop-filter: blur(5px) saturate(70%);
+          "
+        >
+          <h1
+            style="font-weight: bold; font-size: 70px"
+            class="animated bounceInUp"
+          >
+            Hello Rider
+          </h1>
+          <h1 style="font-weight: bold; font-size: 50px" class="fade-in-text">
+            A genuine solution to vehicle problems
+          </h1>
+        </div>
+      </div>
+      <!-- <marquee behavior="scroll" direction="left">
+        <img src="{% static "images/ferrari.png" %}" width="120" height="80"
+        alt="ferrari" /> <img src="{% static "images/ford.png" %}" width="120"
+        height="80" alt="ford" /> <img src="{% static "images/landrover.png" %}"
+        width="120" height="80" alt="lambo" /> <img src="{% static
+        "images/chevrolet.png" %}" width="120" height="80" alt="audi" />
+      </marquee> -->
+      <br /><br />
+      {% include "vehicle/customer_mechanic_cards.html" %}
+      <br /><br />
+    </div>
+
+    {% include "vehicle/footer.html" %}
+  </body>
+</html>

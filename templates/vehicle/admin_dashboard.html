@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static "animate.css" %}">
+    <style media="screen">
+      /* ================================================================================= */
+      /* SCROLLBAR */
+      /* ================================================================================= */
+      ::-webkit-scrollbar {
+        width: 15px;
+      }
+
+      /* Track */
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+
+      ::-webkit-scrollbar-thumb {
+        background: #00c6ff; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      ._body {
+        background-image: url('{% static "images/timeline.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .card {
+        width: 18rem !important;
+        text-align: center;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+        color: #fff !important;
+      }
+      i {
+        font-size: 30px !important;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "vehicle/adminbase.html" %}
+
+    <div class="_body" style="height: 100vh">
+      <div style="padding-top: 150px">
+        <!-- ****** cards start ********** -->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div
+                class="card animated bounceInUp"
+                style="background-color: #0575e6"
+              >
+                <p>
+                  <i class="fa fa-users" aria-hidden="true"></i>
+                </p>
+                <h3>{{total_customer}}</h3>
+                <p>Total Customers</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div
+                class="card animated bounceInUp"
+                style="background-color: #fe8c00"
+              >
+                <p>
+                  <i class="fa fa-users" aria-hidden="true"></i>
+                </p>
+                <h3>{{total_mechanic}}</h3>
+                <p>Total Mechanics</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div
+                class="card animated bounceInUp"
+                style="background-color: #0f9b0f"
+              >
+                <p>
+                  <i class="fa fa-question-circle" aria-hidden="true"></i>
+                </p>
+                <h3>{{total_request}}</h3>
+                <p>Total Enquiries</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div
+                class="card animated bounceInUp"
+                style="background-color: #d31027"
+              >
+                <p>
+                  <i class="fa fa-comments" aria-hidden="true"></i>
+                </p>
+                <h3>{{total_feedback}}</h3>
+                <p>Total Feedback</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ****** cards end ********** -->
+      </div>
+    </div>
+    <div
+      class="text-center"
+      style="background-color: #0072ff; color: #fff; box-shadow: 5px 0 5px #000"
+    >
+      Copyright &copy; 2022 Vehicle Service Management
+    </div>
+  </body>
+</html>

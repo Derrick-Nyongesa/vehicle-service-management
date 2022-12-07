@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static "animate.css" %}">
+    <style media="screen">
+      /* ================================================================================= */
+      /* SCROLLBAR */
+      /* ================================================================================= */
+      ::-webkit-scrollbar {
+        width: 15px;
+      }
+
+      /* Track */
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+
+      ::-webkit-scrollbar-thumb {
+        background: #00c6ff; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      ._body {
+        background-image: url('{% static "images/timeline.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      ._button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background: #00c6ff; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #0072ff,
+          #00c6ff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        text-align: center;
+        cursor: pointer;
+        /* width: 100%; */
+        font-size: 18px;
+        border-radius: 50px !important;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card {
+        border-bottom-left-radius: 50px !important;
+        border-bottom-right-radius: 50px !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include "vehicle/navbar.html" %}
+    <!-- <br><br><br> -->
+
+    <div style="margin-top: 70px; height: 90vh" class="_body">
+      <center>
+        <p class="animated bounceInUp">
+          <img src="{% static "images/feedback.png" %}" alt="">
+        </p>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-12"></div>
+            <div class="col-md-6 col-sm-12">
+              <div class="card">
+                <form method="POST">
+                  <!-- Very Important csrf Token -->
+                  {% csrf_token %}
+                  <div>
+                    <p>{{ form.as_p }}</p>
+                    <br />
+                    <input type="submit" value="Send Message" class="_button" />
+                  </div>
+                </form>
+                <br />
+              </div>
+              <br /><br />
+            </div>
+            <div class="col-md-3 col-sm-12"></div>
+          </div>
+        </div>
+      </center>
+    </div>
+    <div
+      class="text-center"
+      style="background-color: #0072ff; color: #fff; box-shadow: 5px 0 5px #000"
+    >
+      Copyright &copy; 2022 Vehicle Service Management
+    </div>
+  </body>
+</html>
